@@ -1033,6 +1033,22 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   background-image: url("../img/exp/exp_css3.svg");
 }
 
+.experience__icon--python {
+  background-image: url("../img/exp/exp_python.png");
+}
+
+.experience__icon--java {
+  background-image: url("../img/exp/exp_java.png");
+}
+
+.experience__icon--mysql {
+  background-image: url("../img/exp/exp_mysql.png");
+}
+
+.experience__icon--php {
+  background-image: url("../img/exp/exp_php.png");
+}
+
 .experience__icon--javascript {
   background-image: url("../img/exp/exp_javascript.svg");
 }
