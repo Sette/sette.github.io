@@ -53,6 +53,35 @@
             padding: 72px 24px 40px;
         }
 
+        .language-switch {
+            display: flex;
+            gap: 6px;
+            justify-content: flex-end;
+            margin: 0 auto 26px;
+            max-width: 1040px;
+        }
+
+        .language-switch button {
+            appearance: none;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.82rem;
+            font-weight: 800;
+            padding: 7px 12px;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .language-switch button:hover,
+        .language-switch button[aria-pressed="true"] {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #ffffff;
+        }
+
         .hero {
             max-width: 1040px;
             margin: 0 auto;
@@ -249,6 +278,10 @@
                 padding-top: 44px;
             }
 
+            .language-switch {
+                justify-content: flex-start;
+            }
+
             .hero {
                 grid-template-columns: 1fr;
             }
@@ -270,103 +303,164 @@
 <body>
 
 <header>
+    <div class="language-switch" aria-label="Language selector">
+        <button type="button" data-language="en" aria-pressed="true">EN</button>
+        <button type="button" data-language="pt" aria-pressed="false">PT-BR</button>
+    </div>
     <div class="hero">
         <div>
-            <p class="eyebrow">Data Scientist</p>
+            <p class="eyebrow" data-en="Data Scientist" data-pt="Cientista de Dados">Data Scientist</p>
             <h1>Bruno Silva Sette</h1>
-            <p class="headline">Machine learning, MLOps, and applied AI systems for production environments.</p>
+            <p class="headline" data-en="Machine learning, MLOps, and applied AI systems for production environments." data-pt="Machine learning, MLOps e sistemas de IA aplicada para ambientes de produção.">Machine learning, MLOps, and applied AI systems for production environments.</p>
         </div>
         <div class="header-card" aria-label="Contact summary">
-            <p><span class="label">Email</span><a href="mailto:brunosilvasette@gmail.com">brunosilvasette@gmail.com</a></p>
-            <p><span class="label">Phone</span><a href="tel:+5511935364670">(11) 93536-4670</a></p>
-            <p><span class="label">Focus</span>ML Engineering, GenAI, MLOps</p>
+            <p><span class="label" data-en="Email" data-pt="Email">Email</span><a href="mailto:brunosilvasette@gmail.com">brunosilvasette@gmail.com</a></p>
+            <p><span class="label" data-en="Phone" data-pt="Telefone">Phone</span><a href="tel:+5511935364670">(11) 93536-4670</a></p>
+            <p><span class="label" data-en="Focus" data-pt="Foco">Focus</span><span data-en="ML Engineering, GenAI, MLOps" data-pt="Engenharia de ML, GenAI, MLOps">ML Engineering, GenAI, MLOps</span></p>
         </div>
     </div>
 </header>
 
 <div class="container">
     <section class="section">
-        <h2>Profile</h2>
-        <p>I'm a developer with 13 years of experience, a background in Data Science, and a Master's degree in Machine Learning. Highly motivated, constantly improving my skills, and pursuing professional growth.</p>
+        <h2 data-en="Profile" data-pt="Perfil">Profile</h2>
+        <p data-en="I'm a developer with 13 years of experience, a background in Data Science, and a Master's degree in Machine Learning. Highly motivated, constantly improving my skills, and pursuing professional growth." data-pt="Sou desenvolvedor com 13 anos de experiência, formação em Data Science e mestrado em Machine Learning. Sou altamente motivado, busco aprimoramento constante das minhas habilidades e crescimento profissional.">I'm a developer with 13 years of experience, a background in Data Science, and a Master's degree in Machine Learning. Highly motivated, constantly improving my skills, and pursuing professional growth.</p>
     </section>
 
     <section class="section">
-        <h2>Work History</h2>
-        <h3>Data Scientist Intern | AMERICANAS S.A</h3>
+        <h2 data-en="Work History" data-pt="Experiência Profissional">Work History</h2>
+        <h3 data-en="Data Scientist Intern | AMERICANAS S.A" data-pt="Estagiário em Ciência de Dados | AMERICANAS S.A">Data Scientist Intern | AMERICANAS S.A</h3>
         <p>2019 - 2021</p>
         <ul>
-            <li>Developed AutoML solutions using the Apache Marvin AI framework, streamlining the automated search for optimal machine learning models.</li>
-            <li>Conducted in-depth research on Automated Machine Learning (AutoML) and Neural Architecture Search (NAS), focusing on improving model efficiency and accuracy.</li>
+            <li data-en="Developed AutoML solutions using the Apache Marvin AI framework, streamlining the automated search for optimal machine learning models." data-pt="Desenvolvi soluções de AutoML usando o framework Apache Marvin AI, otimizando a busca automatizada por modelos de machine learning ideais.">Developed AutoML solutions using the Apache Marvin AI framework, streamlining the automated search for optimal machine learning models.</li>
+            <li data-en="Conducted in-depth research on Automated Machine Learning (AutoML) and Neural Architecture Search (NAS), focusing on improving model efficiency and accuracy." data-pt="Conduzi pesquisas aprofundadas em Automated Machine Learning (AutoML) e Neural Architecture Search (NAS), com foco em melhorar eficiência e acurácia dos modelos.">Conducted in-depth research on Automated Machine Learning (AutoML) and Neural Architecture Search (NAS), focusing on improving model efficiency and accuracy.</li>
         </ul>
-        <h3>Data Scientist | AMERICANAS S.A</h3>
+        <h3 data-en="Data Scientist | AMERICANAS S.A" data-pt="Cientista de Dados | AMERICANAS S.A">Data Scientist | AMERICANAS S.A</h3>
         <p>2021 - 2023</p>
         <ul>
-            <li>Trained deep learning models using MLOps tools such as Docker, Kubernetes, and CI/CD on large-scale datasets (over 10 million product titles and images), orchestrated with Airflow and Vertex AI Jobs, and processed using Dataflow jobs.</li>
-            <li>Demonstrated experience working in multi-cloud environments, leveraging both Google Cloud and AWS.</li>
-            <li>Applied bottom-up approaches (H-DBSCAN) for hierarchical product classification, identifying and removing outliers from the training set of hierarchical deep learning models.</li>
-            <li>Researched hierarchical multi-modal classification techniques (combining text and images) for e-commerce product categorization.</li>
+            <li data-en="Trained deep learning models using MLOps tools such as Docker, Kubernetes, and CI/CD on large-scale datasets (over 10 million product titles and images), orchestrated with Airflow and Vertex AI Jobs, and processed using Dataflow jobs." data-pt="Treinei modelos de deep learning usando ferramentas de MLOps como Docker, Kubernetes e CI/CD em bases de larga escala, com mais de 10 milhões de títulos e imagens de produtos, orquestradas com Airflow e Vertex AI Jobs e processadas com Dataflow jobs.">Trained deep learning models using MLOps tools such as Docker, Kubernetes, and CI/CD on large-scale datasets (over 10 million product titles and images), orchestrated with Airflow and Vertex AI Jobs, and processed using Dataflow jobs.</li>
+            <li data-en="Demonstrated experience working in multi-cloud environments, leveraging both Google Cloud and AWS." data-pt="Atuei em ambientes multi-cloud, utilizando Google Cloud e AWS.">Demonstrated experience working in multi-cloud environments, leveraging both Google Cloud and AWS.</li>
+            <li data-en="Applied bottom-up approaches (H-DBSCAN) for hierarchical product classification, identifying and removing outliers from the training set of hierarchical deep learning models." data-pt="Apliquei abordagens bottom-up (H-DBSCAN) para classificação hierárquica de produtos, identificando e removendo outliers do conjunto de treino de modelos hierárquicos de deep learning.">Applied bottom-up approaches (H-DBSCAN) for hierarchical product classification, identifying and removing outliers from the training set of hierarchical deep learning models.</li>
+            <li data-en="Researched hierarchical multi-modal classification techniques (combining text and images) for e-commerce product categorization." data-pt="Pesquisei técnicas de classificação hierárquica multimodal, combinando texto e imagens, para categorização de produtos de e-commerce.">Researched hierarchical multi-modal classification techniques (combining text and images) for e-commerce product categorization.</li>
         </ul>
-        <h3>Data Scientist | SOFTPLAN UNJ</h3>
+        <h3 data-en="Data Scientist | SOFTPLAN UNJ" data-pt="Cientista de Dados | SOFTPLAN UNJ">Data Scientist | SOFTPLAN UNJ</h3>
         <p>2023 - 2025</p>
         <ul>
-            <li>Deployed NLP machine learning models to production using MLOps tools such as Docker, Kubernetes, and CI/CD, ensuring scalable, reliable, and automated model serving pipelines on AWS ECS and Kubernetes clusters.</li>
-            <li>Implemented ETL processes for SQL Server, PostgreSQL, and Oracle SQL databases from the Brazilian judicial system, handling servers with different versions and distributions located across the country.</li>
-            <li>Created and deployed an OCR PDF API using AWS Step Functions and AWS Lambda with AWS Textract and a version with Redis, RabbitMQ and Celery for clients environments.</li>
-            <li>Applied hierarchical clustering techniques for semi-supervised learning to build a taxonomy of legal processes for state Prosecutor Offices.</li>
-            <li>Led and mentored a team of three junior data scientists, sharing both academic knowledge of machine learning and practical expertise in NLP, OCR, and ETL projects involving judicial data from the Brazilian judicial system.</li>
-            <li>Developed and maintained a fork of the open-source <a href="https://docs.openwebui.com">Open WebUI project</a>, named Open WebUI Iara, for the Brazilian Public Prosecutor’s Office (Ministério Público – MP). This version features asynchronous document processing with Celery, RabbitMQ, and Redis as the result backend, significantly enhancing scalability and efficiency when managing large volumes of data. Integration with Weaviate was implemented via GraphQL on FastAPI routes, ensuring robust and scalable semantic data retrieval.</li>
+            <li data-en="Deployed NLP machine learning models to production using MLOps tools such as Docker, Kubernetes, and CI/CD, ensuring scalable, reliable, and automated model serving pipelines on AWS ECS and Kubernetes clusters." data-pt="Implantei modelos de machine learning para NLP em produção usando ferramentas de MLOps como Docker, Kubernetes e CI/CD, garantindo pipelines escaláveis, confiáveis e automatizados em AWS ECS e clusters Kubernetes.">Deployed NLP machine learning models to production using MLOps tools such as Docker, Kubernetes, and CI/CD, ensuring scalable, reliable, and automated model serving pipelines on AWS ECS and Kubernetes clusters.</li>
+            <li data-en="Implemented ETL processes for SQL Server, PostgreSQL, and Oracle SQL databases from the Brazilian judicial system, handling servers with different versions and distributions located across the country." data-pt="Implementei processos de ETL para bases SQL Server, PostgreSQL e Oracle SQL do sistema judiciário brasileiro, lidando com servidores de diferentes versões e distribuições localizados em todo o país.">Implemented ETL processes for SQL Server, PostgreSQL, and Oracle SQL databases from the Brazilian judicial system, handling servers with different versions and distributions located across the country.</li>
+            <li data-en="Created and deployed an OCR PDF API using AWS Step Functions and AWS Lambda with AWS Textract and a version with Redis, RabbitMQ and Celery for clients environments." data-pt="Criei e implantei uma API de OCR para PDFs usando AWS Step Functions, AWS Lambda e AWS Textract, além de uma versão com Redis, RabbitMQ e Celery para ambientes de clientes.">Created and deployed an OCR PDF API using AWS Step Functions and AWS Lambda with AWS Textract and a version with Redis, RabbitMQ and Celery for clients environments.</li>
+            <li data-en="Applied hierarchical clustering techniques for semi-supervised learning to build a taxonomy of legal processes for state Prosecutor Offices." data-pt="Apliquei técnicas de clusterização hierárquica para aprendizado semissupervisionado na construção de uma taxonomia de processos jurídicos para Ministérios Públicos estaduais.">Applied hierarchical clustering techniques for semi-supervised learning to build a taxonomy of legal processes for state Prosecutor Offices.</li>
+            <li data-en="Led and mentored a team of three junior data scientists, sharing both academic knowledge of machine learning and practical expertise in NLP, OCR, and ETL projects involving judicial data from the Brazilian judicial system." data-pt="Liderei e mentorei uma equipe de três cientistas de dados júnior, compartilhando conhecimento acadêmico em machine learning e experiência prática em projetos de NLP, OCR e ETL com dados judiciais brasileiros.">Led and mentored a team of three junior data scientists, sharing both academic knowledge of machine learning and practical expertise in NLP, OCR, and ETL projects involving judicial data from the Brazilian judicial system.</li>
+            <li data-en="Developed and maintained a fork of the open-source <a href='https://docs.openwebui.com'>Open WebUI project</a>, named Open WebUI Iara, for the Brazilian Public Prosecutor’s Office (Ministério Público – MP). This version features asynchronous document processing with Celery, RabbitMQ, and Redis as the result backend, significantly enhancing scalability and efficiency when managing large volumes of data. Integration with Weaviate was implemented via GraphQL on FastAPI routes, ensuring robust and scalable semantic data retrieval." data-pt="Desenvolvi e mantive um fork do projeto open-source <a href='https://docs.openwebui.com'>Open WebUI</a>, chamado Open WebUI Iara, para o Ministério Público brasileiro. A versão inclui processamento assíncrono de documentos com Celery, RabbitMQ e Redis como backend de resultados, aumentando a escalabilidade e a eficiência no gerenciamento de grandes volumes de dados. A integração com Weaviate foi implementada via GraphQL em rotas FastAPI, garantindo recuperação semântica robusta e escalável.">Developed and maintained a fork of the open-source <a href="https://docs.openwebui.com">Open WebUI project</a>, named Open WebUI Iara, for the Brazilian Public Prosecutor’s Office (Ministério Público – MP). This version features asynchronous document processing with Celery, RabbitMQ, and Redis as the result backend, significantly enhancing scalability and efficiency when managing large volumes of data. Integration with Weaviate was implemented via GraphQL on FastAPI routes, ensuring robust and scalable semantic data retrieval.</li>
         </ul>
-        <h3>Data Scientist | Solides</h3>
-        <p>2026 - Present</p>
+        <h3 data-en="Data Scientist | Solides" data-pt="Cientista de Dados | Solides">Data Scientist | Solides</h3>
+        <p data-en="2026 - Present" data-pt="2026 - Atual">2026 - Present</p>
         <ul>
-            <li>Developed a customer churn prediction agent for Solides by building automated training and inference pipelines on <b>Vertex AI</b>, standardizing the machine learning lifecycle from model development to production scoring.</li>
-            <li>Engineered data pipelines to publish model outputs, customer features, and health indicators into <b>BigQuery</b>, enabling reliable monitoring and downstream analytics for retention initiatives.</li>
-            <li>Built dashboards to monitor customer health across the company, giving business teams visibility into risk signals, engagement metrics, and retention opportunities.</li>
-            <li>Developed a next-best-offer pipeline based on association rule statistics, generating product offer recommendations that the commercial team can consume directly through its CRM.</li>
-            <li>Developed an AI Agent using the <b>Google Gen AI SDK</b> and <b>Model Context Protocol (MCP)</b> to interface with BigQuery, enabling autonomous consumption and reasoning over customer Health Score metrics to drive proactive retention insights.</li>
-            <li>Led AI maturity initiatives by organizing the company-wide <b>Gemini Enterprise</b> trial, governing license allocation, connector setup, usage monitoring, and support for teams adopting AI across the organization.</li>
+            <li data-en="Developed a customer churn prediction agent for Solides by building automated training and inference pipelines on <b>Vertex AI</b>, standardizing the machine learning lifecycle from model development to production scoring." data-pt="Desenvolvi um agente de predição de churn de clientes para a Solides por meio de pipelines automatizados de treinamento e inferência no <b>Vertex AI</b>, padronizando o ciclo de vida de machine learning do desenvolvimento do modelo até o scoring em produção.">Developed a customer churn prediction agent for Solides by building automated training and inference pipelines on <b>Vertex AI</b>, standardizing the machine learning lifecycle from model development to production scoring.</li>
+            <li data-en="Engineered data pipelines to publish model outputs, customer features, and health indicators into <b>BigQuery</b>, enabling reliable monitoring and downstream analytics for retention initiatives." data-pt="Engenhei pipelines de dados para publicar saídas de modelos, features de clientes e indicadores de saúde no <b>BigQuery</b>, viabilizando monitoramento confiável e análises para iniciativas de retenção.">Engineered data pipelines to publish model outputs, customer features, and health indicators into <b>BigQuery</b>, enabling reliable monitoring and downstream analytics for retention initiatives.</li>
+            <li data-en="Built dashboards to monitor customer health across the company, giving business teams visibility into risk signals, engagement metrics, and retention opportunities." data-pt="Construí dashboards para monitorar a saúde dos clientes na companhia, dando aos times de negócio visibilidade sobre sinais de risco, métricas de engajamento e oportunidades de retenção.">Built dashboards to monitor customer health across the company, giving business teams visibility into risk signals, engagement metrics, and retention opportunities.</li>
+            <li data-en="Developed a next-best-offer pipeline based on association rule statistics, generating product offer recommendations that the commercial team can consume directly through its CRM." data-pt="Desenvolvi um pipeline de próxima melhor oferta baseado em estatísticas de regras de associação, gerando recomendações de ofertas de produto para consumo direto pelo time comercial no CRM.">Developed a next-best-offer pipeline based on association rule statistics, generating product offer recommendations that the commercial team can consume directly through its CRM.</li>
+            <li data-en="Developed an AI Agent using the <b>Google Gen AI SDK</b> and <b>Model Context Protocol (MCP)</b> to interface with BigQuery, enabling autonomous consumption and reasoning over customer Health Score metrics to drive proactive retention insights." data-pt="Desenvolvi um agente de IA usando o <b>Google Gen AI SDK</b> e o <b>Model Context Protocol (MCP)</b> para interface com o BigQuery, permitindo consumo autônomo e raciocínio sobre métricas de Health Score dos clientes para gerar insights proativos de retenção.">Developed an AI Agent using the <b>Google Gen AI SDK</b> and <b>Model Context Protocol (MCP)</b> to interface with BigQuery, enabling autonomous consumption and reasoning over customer Health Score metrics to drive proactive retention insights.</li>
+            <li data-en="Led AI maturity initiatives by organizing the company-wide <b>Gemini Enterprise</b> trial, governing license allocation, connector setup, usage monitoring, and support for teams adopting AI across the organization." data-pt="Liderei iniciativas de maturidade em IA ao organizar o trial corporativo do <b>Gemini Enterprise</b>, fazendo a governança de alocação de licenças, configuração de conectores, monitoramento de uso e suporte aos times que adotam IA na organização.">Led AI maturity initiatives by organizing the company-wide <b>Gemini Enterprise</b> trial, governing license allocation, connector setup, usage monitoring, and support for teams adopting AI across the organization.</li>
         </ul>
 
     </section>
 
     <section class="section">
-        <h2>Education</h2>
-        <h3>Computer Network Technician | Serviço Nacional de Aprendizagem Industrial</h3>
+        <h2 data-en="Education" data-pt="Formação">Education</h2>
+        <h3 data-en="Computer Network Technician | Serviço Nacional de Aprendizagem Industrial" data-pt="Técnico em Redes de Computadores | Serviço Nacional de Aprendizagem Industrial">Computer Network Technician | Serviço Nacional de Aprendizagem Industrial</h3>
         <p>2012 - 2014</p>
         <ul>
-            <li>Recognized as the top student among all technical courses in the graduating class of the second semester of 2014.</li>
+            <li data-en="Recognized as the top student among all technical courses in the graduating class of the second semester of 2014." data-pt="Reconhecido como melhor aluno entre todos os cursos técnicos da turma concluinte do segundo semestre de 2014.">Recognized as the top student among all technical courses in the graduating class of the second semester of 2014.</li>
         </ul>
-        <h3>Bachelor of Computer Science | Universidade Federal de Mato Grosso</h3>
+        <h3 data-en="Bachelor of Computer Science | Universidade Federal de Mato Grosso" data-pt="Bacharelado em Ciência da Computação | Universidade Federal de Mato Grosso">Bachelor of Computer Science | Universidade Federal de Mato Grosso</h3>
         <p>2015 - 2019</p>
         <ul>
-            <li>Active participant in the CNPQ Scientific Initiation Program, focusing on NLP and hierarchical text classification for industrial patents from the World Intellectual Property Organization (WIPO).</li>
+            <li data-en="Active participant in the CNPQ Scientific Initiation Program, focusing on NLP and hierarchical text classification for industrial patents from the World Intellectual Property Organization (WIPO)." data-pt="Participante ativo do Programa de Iniciação Científica do CNPQ, com foco em NLP e classificação hierárquica de textos para patentes industriais da World Intellectual Property Organization (WIPO).">Active participant in the CNPQ Scientific Initiation Program, focusing on NLP and hierarchical text classification for industrial patents from the World Intellectual Property Organization (WIPO).</li>
         </ul>
-        <h3>Master of Computer Science (M.Sc.) in Machine Learning | Universidade Federal de São Carlos</h3>
+        <h3 data-en="Master of Computer Science (M.Sc.) in Machine Learning | Universidade Federal de São Carlos" data-pt="Mestrado em Ciência da Computação em Machine Learning | Universidade Federal de São Carlos">Master of Computer Science (M.Sc.) in Machine Learning | Universidade Federal de São Carlos</h3>
         <p>2019 - 2021</p>
         <ul>
-            <li>Conducted a literature review and published advancements in Neural Architecture Search (NAS) through an ensemble approach to search spaces and model combination, demonstrating that dividing the search space into different network configurations can improve final classification metrics.</li>
+            <li data-en="Conducted a literature review and published advancements in Neural Architecture Search (NAS) through an ensemble approach to search spaces and model combination, demonstrating that dividing the search space into different network configurations can improve final classification metrics." data-pt="Conduzi uma revisão da literatura e publiquei avanços em Neural Architecture Search (NAS) por meio de uma abordagem ensemble para espaços de busca e combinação de modelos, demonstrando que dividir o espaço de busca em diferentes configurações de rede pode melhorar as métricas finais de classificação.">Conducted a literature review and published advancements in Neural Architecture Search (NAS) through an ensemble approach to search spaces and model combination, demonstrating that dividing the search space into different network configurations can improve final classification metrics.</li>
         </ul>
-        <h3>PhD Candidate in Computer Science | Universidade Federal de São Carlos</h3>
-        <p>2021 - 2027 (Ongoing)</p>
+        <h3 data-en="PhD Candidate in Computer Science | Universidade Federal de São Carlos" data-pt="Doutorando em Ciência da Computação | Universidade Federal de São Carlos">PhD Candidate in Computer Science | Universidade Federal de São Carlos</h3>
+        <p data-en="2021 - 2027 (Ongoing)" data-pt="2021 - 2027 (Em andamento)">2021 - 2027 (Ongoing)</p>
         <ul>
-            <li>Researching hierarchical multi-label classification techniques and developing a <a href="https://github.com/sette/hmc_torch">framework</a> to advance hierarchical multi-label categorization metrics using deep learning with PyTorch.</li>
-            <li>Current work focuses on metric learning to improve hierarchical multi-label metrics based on the research hypothesis.</li>
+            <li data-en="Researching hierarchical multi-label classification techniques and developing a <a href='https://github.com/sette/hmc_torch'>framework</a> to advance hierarchical multi-label categorization metrics using deep learning with PyTorch." data-pt="Pesquiso técnicas de classificação hierárquica multi-label e desenvolvo um <a href='https://github.com/sette/hmc_torch'>framework</a> para avançar métricas de categorização hierárquica multi-label usando deep learning com PyTorch.">Researching hierarchical multi-label classification techniques and developing a <a href="https://github.com/sette/hmc_torch">framework</a> to advance hierarchical multi-label categorization metrics using deep learning with PyTorch.</li>
+            <li data-en="Current work focuses on metric learning to improve hierarchical multi-label metrics based on the research hypothesis." data-pt="O trabalho atual foca em metric learning para melhorar métricas hierárquicas multi-label com base na hipótese de pesquisa.">Current work focuses on metric learning to improve hierarchical multi-label metrics based on the research hypothesis.</li>
         </ul>
 
     </section>
 
     <section class="section">
-        <h2>Contact</h2>
+        <h2 data-en="Contact" data-pt="Contato">Contact</h2>
         <ul class="contact-info">
-            <li><strong>Email:</strong> <a href="mailto:brunosilvasette@gmail.com">brunosilvasette@gmail.com</a></li>
-            <li><strong>Phone:</strong> <a href="tel:+5511935364670">(11) 93536-4670</a></li>
+            <li><strong data-en="Email:" data-pt="Email:">Email:</strong> <a href="mailto:brunosilvasette@gmail.com">brunosilvasette@gmail.com</a></li>
+            <li><strong data-en="Phone:" data-pt="Telefone:">Phone:</strong> <a href="tel:+5511935364670">(11) 93536-4670</a></li>
         </ul>
     </section>
 </div>
 
 <footer>
-    <p>© 2026 Bruno Silva Sette. All rights reserved.</p>
+    <p data-en="© 2026 Bruno Silva Sette. All rights reserved." data-pt="© 2026 Bruno Silva Sette. Todos os direitos reservados.">© 2026 Bruno Silva Sette. All rights reserved.</p>
 </footer>
+
+<script>
+    const languageButtons = document.querySelectorAll('[data-language]');
+    const translatedElements = document.querySelectorAll('[data-en][data-pt]');
+    const pageDescription = document.querySelector('meta[name="description"]');
+    const languageContent = {
+        en: {
+            title: 'Bruno Silva Sette | Data Scientist',
+            description: 'Portfolio of Bruno Silva Sette, Data Scientist.'
+        },
+        pt: {
+            title: 'Bruno Silva Sette | Cientista de Dados',
+            description: 'Portfólio de Bruno Silva Sette, Cientista de Dados.'
+        }
+    };
+
+    function getStoredLanguage() {
+        try {
+            return localStorage.getItem('preferredLanguage');
+        } catch (error) {
+            return null;
+        }
+    }
+
+    function storeLanguage(language) {
+        try {
+            localStorage.setItem('preferredLanguage', language);
+        } catch (error) {
+            return;
+        }
+    }
+
+    function setLanguage(language) {
+        const activeLanguage = language === 'pt' ? 'pt' : 'en';
+        document.documentElement.lang = activeLanguage === 'pt' ? 'pt-BR' : 'en';
+        document.title = languageContent[activeLanguage].title;
+        if (pageDescription) {
+            pageDescription.setAttribute('content', languageContent[activeLanguage].description);
+        }
+
+        translatedElements.forEach((element) => {
+            element.innerHTML = element.dataset[activeLanguage];
+        });
+
+        languageButtons.forEach((button) => {
+            button.setAttribute('aria-pressed', String(button.dataset.language === activeLanguage));
+        });
+
+        storeLanguage(activeLanguage);
+    }
+
+    languageButtons.forEach((button) => {
+        button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+
+    setLanguage(getStoredLanguage() || 'en');
+</script>
 
 </body>
 </html>
