@@ -7,81 +7,281 @@
     <link rel="shortcut icon" href="suitcase-solid-full.ico" type="image/x-icon">
     <title>Bruno Silva Sette | Data Scientist</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #f7f8fb;
+            --surface: #ffffff;
+            --ink: #151922;
+            --muted: #626b7a;
+            --line: #dde3ea;
+            --accent: #0f766e;
+            --accent-soft: #d9f4ef;
+            --accent-warm: #c2410c;
+            --shadow: 0 24px 70px rgba(26, 32, 44, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background:
+                radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 30rem),
+                linear-gradient(180deg, #ffffff 0%, var(--bg) 32rem);
+            color: var(--ink);
+            line-height: 1.65;
+        }
+
+        a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         header {
-            background: linear-gradient(135deg, #4a90e2, #50b0c4);
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 72px 24px 40px;
         }
 
-        header .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #fff;
-            display: inline-block;
-            margin-bottom: 15px;
-            background-image: url('https://via.placeholder.com/60'); /* Substituir por um ícone ou logotipo */
-            background-size: cover;
+        .hero {
+            max-width: 1040px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            align-items: end;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 36px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            margin: 0 0 12px;
+            text-transform: uppercase;
         }
 
         header h1 {
-            font-size: 2.5em;
-            margin: 10px 0;
-            font-weight: 700;
-            letter-spacing: 1px;
+            color: var(--ink);
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            font-weight: 800;
+            letter-spacing: 0;
+            line-height: 0.95;
+            margin: 0;
+            max-width: 760px;
         }
 
-        header p {
-            font-size: 1.2em;
-            margin: 0;
-            font-weight: 400;
-            opacity: 0.85;
+        .headline {
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+            font-weight: 500;
+            margin: 20px 0 0;
+            max-width: 680px;
+        }
+
+        .header-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            min-width: 260px;
+            padding: 22px;
+        }
+
+        .header-card p {
+            margin: 0 0 12px;
+        }
+
+        .header-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            color: var(--muted);
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            margin-bottom: 2px;
+            text-transform: uppercase;
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2, h3 {
-            color: #333;
+            max-width: 1040px;
+            margin: 0 auto 56px;
+            padding: 0 24px;
         }
 
         .section {
-            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 14px 40px rgba(26, 32, 44, 0.05);
+            margin-bottom: 18px;
+            padding: 30px;
+        }
+
+        h2 {
+            align-items: center;
+            color: var(--ink);
+            display: flex;
+            font-size: 0.88rem;
+            font-weight: 800;
+            gap: 12px;
+            letter-spacing: 0.13em;
+            margin: 0 0 22px;
+            text-transform: uppercase;
+        }
+
+        h2::after {
+            background: var(--line);
+            content: "";
+            flex: 1;
+            height: 1px;
+        }
+
+        h3 {
+            border-top: 1px solid var(--line);
+            color: var(--ink);
+            font-size: 1.08rem;
+            font-weight: 750;
+            line-height: 1.35;
+            margin: 28px 0 4px;
+            padding-top: 24px;
+        }
+
+        h2 + h3 {
+            border-top: 0;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        h3 + p {
+            background: var(--accent-soft);
+            border-radius: 999px;
+            color: var(--accent-warm);
+            display: inline-flex;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            padding: 3px 10px;
+        }
+
+        .section > p {
+            color: var(--muted);
+            font-size: 1.03rem;
+            margin: 0;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding: 0;
+        }
+
+        li {
+            color: #303846;
+            list-style: none;
+            margin: 0 0 10px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        li::before {
+            background: var(--accent);
+            border-radius: 999px;
+            content: "";
+            height: 7px;
+            left: 0;
+            position: absolute;
+            top: 0.72em;
+            width: 7px;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 0;
+        }
+
+        .contact-info li {
+            background: var(--bg);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            margin: 0;
+            padding: 14px 16px;
+        }
+
+        .contact-info li::before {
+            display: none;
+        }
+
+        b, strong {
+            color: var(--ink);
+            font-weight: 800;
         }
 
         footer {
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding: 0 24px 32px;
             text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            margin-top: 40px;
         }
 
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 760px) {
+            header {
+                padding-top: 44px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .header-card {
+                min-width: 0;
+            }
+
+            .section {
+                padding: 24px 20px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Bruno Silva Sette</h1>
-    <p>Data Scientist</p>
+    <div class="hero">
+        <div>
+            <p class="eyebrow">Data Scientist</p>
+            <h1>Bruno Silva Sette</h1>
+            <p class="headline">Machine learning, MLOps, and applied AI systems for production environments.</p>
+        </div>
+        <div class="header-card" aria-label="Contact summary">
+            <p><span class="label">Email</span><a href="mailto:brunosilvasette@gmail.com">brunosilvasette@gmail.com</a></p>
+            <p><span class="label">Phone</span><a href="tel:+5511935364670">(11) 93536-4670</a></p>
+            <p><span class="label">Focus</span>ML Engineering, GenAI, MLOps</p>
+        </div>
+    </div>
 </header>
 
 <div class="container">
@@ -158,8 +358,8 @@
     <section class="section">
         <h2>Contact</h2>
         <ul class="contact-info">
-            <li><strong>Email:</strong> brunosilvasette@gmail.com</li>
-            <li><strong>Phone:</strong> (11) 93536-4670</li>
+            <li><strong>Email:</strong> <a href="mailto:brunosilvasette@gmail.com">brunosilvasette@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+5511935364670">(11) 93536-4670</a></li>
         </ul>
     </section>
 </div>
